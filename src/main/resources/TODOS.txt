@@ -1,0 +1,4 @@
+1. test cases.
+2. persists the saved game and high scores in file.
+3. speed of arrow based on character speed.
+4. refactor characterMap.

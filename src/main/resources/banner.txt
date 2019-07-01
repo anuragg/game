@@ -1,0 +1,7 @@
+
+
+
+        New Game            Press 'n'
+        Load Game           Press 'l'
+        High Score          Press 'h'
+        Quit                Press 'q'

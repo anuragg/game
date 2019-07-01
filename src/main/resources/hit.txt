@@ -1,0 +1,22 @@
+
+        Good Shot {character} ({username})
+        Your score is {score}
+        Your HP is now {power}
+
+        Press Enter to Continue.
+        Press 'w' to quit game and go to main screen.
+        Press 's' to Save and go to the main screen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

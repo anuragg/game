@@ -1,0 +1,7 @@
+
+        Your HP is exhausted..
+
+        Game Over, {character} ({username}).
+        Your score is {score}.
+
+        Press 'w' to go to main screen.

@@ -1,0 +1,22 @@
+
+        Welcome Back {character} ({username}).
+        Resume your Game.
+
+        Your score is {score}
+        Your HP is now {power}
+
+        Press Enter to Continue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
