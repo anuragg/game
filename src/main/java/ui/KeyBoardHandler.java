@@ -19,7 +19,7 @@ public class KeyBoardHandler {
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
         try {
             Integer i = reader.read();
-            listener.character(i);
+            listener.character(i-48);
         } catch (IOException e) {
             e.printStackTrace();
         }

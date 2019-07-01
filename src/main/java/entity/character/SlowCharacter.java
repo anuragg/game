@@ -20,4 +20,9 @@ public class SlowCharacter implements Character {
     public String resource() {
         return "slow-character.txt";
     }
+
+    @Override
+    public Integer idx() {
+        return 3;
+    }
 }

@@ -1,11 +1,5 @@
 package engine;
 
-public interface GameListenerInterface extends WelcomeGameInterface, LoginGameInterface {
+public interface GameListenerInterface extends ExploreInterface, CreateCharacterInterface, LoadGameInterface, PlayGameInterface {
     void welcome();
-    void play();
-
-    void save();
-    void resume(int i);
-
-    void shoot();
 }

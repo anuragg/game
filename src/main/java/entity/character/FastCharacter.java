@@ -20,4 +20,9 @@ public class FastCharacter implements Character {
     public String resource() {
         return "fast-character.txt";
     }
+
+    @Override
+    public Integer idx() {
+        return 1;
+    }
 }

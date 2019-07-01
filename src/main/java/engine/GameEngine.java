@@ -3,12 +3,11 @@ package engine;
 import entity.GameSession;
 import entity.LoadGameSession;
 import entity.character.Character;
+import service.CharacterService;
 import service.HighScoreService;
 import service.LoadGameService;
 import ui.KeyBoardHandler;
 import ui.UIScreen;
-
-import java.util.Map;
 
 import static service.GameConstants.*;
 
@@ -17,9 +16,9 @@ public class GameEngine implements GameListenerInterface {
     private KeyBoardHandler keyBoardHandler;
     private LoadGameService loadGameService;
     private HighScoreService highScoreService;
+    private CharacterService characterService;
     private String username;
     private GameSession session;
-    private Map<Integer, Character> characterMap;
 
     public GameEngine() {
         ui = new UIScreen();
@@ -27,6 +26,7 @@ public class GameEngine implements GameListenerInterface {
         keyBoardHandler.setListener(this);
         loadGameService = new LoadGameService();
         highScoreService = new HighScoreService();
+        characterService = new CharacterService();
     }
 
     public void start() {
@@ -66,13 +66,13 @@ public class GameEngine implements GameListenerInterface {
     public void username(String username) {
         this.username = username;
         System.out.println("Username is : " + this.username);
-        this.characterMap = ui.chooseCharacter();
+        ui.chooseCharacter(characterService.getCharacters());
         keyBoardHandler.waitForCharecter();
     }
 
     @Override
     public void character(Integer i) {
-        Character character = characterMap.get(i-48);
+        Character character = characterService.get(i);
         this.session = new GameSession(username,0, character.getHealth(), character);
         System.out.println("Character chosen is : " + this.session.getCharacter().log());
         this.play();

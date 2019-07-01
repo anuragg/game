@@ -20,4 +20,9 @@ public class MediumCharacter implements Character {
     public String resource() {
         return "medium-character.txt";
     }
+
+    @Override
+    public Integer idx() {
+        return 2;
+    }
 }

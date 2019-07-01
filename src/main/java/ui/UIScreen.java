@@ -3,9 +3,6 @@ package ui;
 import entity.GameSession;
 import entity.LoadGameSession;
 import entity.character.Character;
-import entity.character.FastCharacter;
-import entity.character.MediumCharacter;
-import entity.character.SlowCharacter;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -94,12 +91,11 @@ public class UIScreen {
         System.out.println("Press b to Go back.");
     }
 
-    public Map<Integer, Character> chooseCharacter() {
+    public void chooseCharacter(List<Character> characters) {
         this.clearScreen();
         Map<Integer, Character> map = new HashMap<>();
         System.out.println("Choose your character!!");
-        Integer i = 1;
-        for (Character character : new Character[] { new SlowCharacter(), new MediumCharacter(), new FastCharacter() }) {
+        for (Character character : characters) {
             InputStream inputStream = getClass()
                     .getClassLoader().getResourceAsStream(character.resource());
             try (Scanner scanner = new Scanner(inputStream, "utf-8")) {
@@ -107,13 +103,10 @@ public class UIScreen {
                 display = display.replace("{name}", character.getName());
                 display = display.replace("{power}", character.getHealth().toString());
                 display = display.replace("{speed}", character.getSpeed().toString());
-                display = display.replace("{action}", i.toString());
+                display = display.replace("{action}", character.idx().toString());
                 System.out.println(display);
             }
-            map.put(i, character);
-            i = i + 1;
         }
-        return map;
     }
 
     public void gameover(String username, String character, String score, String power) {

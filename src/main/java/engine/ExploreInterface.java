@@ -1,6 +1,6 @@
 package engine;
 
-public interface WelcomeGameInterface {
+public interface ExploreInterface {
     void login();
     void end();
     void load();

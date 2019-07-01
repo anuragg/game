@@ -1,6 +1,6 @@
 package engine;
 
-public interface LoginGameInterface {
+public interface CreateCharacterInterface {
     void username(String username);
     void character(Integer i);
 }
