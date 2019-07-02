@@ -7,8 +7,6 @@ import entity.character.SlowCharacter;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CharacterServiceTest {
     @Test
     public void testGetCharacters() {
