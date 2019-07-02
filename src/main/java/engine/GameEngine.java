@@ -110,6 +110,7 @@ public class GameEngine implements GameListenerInterface {
         int xAxisMax = X_MAX;
         int yAxisMax = Y_MAX;
         int xAxisPointWhereYmeet = X_SUBSET;
+        int speed = session.getCharacter().getSpeed()/100;
 
         for (int time=0; time<TIME_MAX; time++) {
             if(shoot) {
@@ -118,7 +119,7 @@ public class GameEngine implements GameListenerInterface {
             }
 
             int xAxisPosition = time >= xAxisMax ? xAxisMax-1 : time;
-            int yAxisPosition = shootTime > 0 ? time-shootTime >= yAxisMax ? yAxisMax-1 : time-shootTime : 0;
+            int yAxisPosition = shootTime > 0 ? speed*(time-shootTime) >= yAxisMax ? yAxisMax-1 : speed*(time-shootTime) : 0;
 
             ui.playScreen(xAxisMax, xAxisPosition, yAxisMax, yAxisPosition, xAxisPointWhereYmeet);
 
